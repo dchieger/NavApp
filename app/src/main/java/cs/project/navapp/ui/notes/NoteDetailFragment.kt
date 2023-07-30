@@ -28,7 +28,7 @@ class NoteDetailFragment : Fragment() {
         get() = checkNotNull(_binding) {
             "Cannot access binding because it is null. Is the view visible?"
         }
-    private val args: FragmentNoteDetailBindingArgs by navArgs()
+    //private val args: FragmentNoteDetailBindingArgs by navArgs()
 
     private val noteDetailViewModel: NoteDetailViewModel by viewModels {
         NoteDetailViewModelFactory(args.noteId)
@@ -66,10 +66,6 @@ class NoteDetailFragment : Fragment() {
                     oldNote.copy(title = text.toString())
                 }
             }
-
-            noteDate.apply {
-
-            }
         }
 
         viewLifecycleOwner.lifecycleScope.launch {
@@ -91,7 +87,6 @@ class NoteDetailFragment : Fragment() {
             if (noteTitle.text.toString() != note.title) {
                 noteTitle.setText(note.title)
             }
-            noteDate.text = note.date.toString()
         }
     }
 
