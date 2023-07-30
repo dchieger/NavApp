@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/mobile_navigation"
+            app:startDestination="@+id/noteListFragment">
+
+    <fragment
+            android:id="@+id/navigation_task"
+            android:name="cs.project.navapp.ui.task.TaskFragment"
+            android:label="@string/title_notes"
+            tools:layout="@layout/fragment_task"/>
+    <fragment
+            android:id="@+id/navigation_calendar"
+            android:name="cs.project.navapp.ui.calendar.CalendarFragment"
+            android:label="@string/title_calendar"
+            tools:layout="@layout/fragment_calendar"/>
+
+<!--NOTES NAVIGATION-->
+    <fragment
+            android:id="@+id/noteListFragment"
+            android:name="cs.project.navapp.ui.notes.NoteListFragment"
+            android:label="NoteListFragment"
+            tools:layout="@layout/fragment_note_list">
+            <action
+                    android:id="@+id/showNoteDetail"
+                    app:destination="@id/noteDeatilFragment"/>
+                    </fragment>
+
+    <fragment
+            android:id="@+id/noteDeatilFragment"
+            android:name="cs.project.navapp.ui.notes.NoteDetailFragment"
+            android:label="NoteDetailFragment"
+            tools:layout="@layout/fragment_note_detail">
+        <argument
+                android:name="noteId"
+                app:argType="java.util.UUID"/>
+    </fragment>
+
+
+</navigation>
