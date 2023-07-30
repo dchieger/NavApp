@@ -1,4 +1,4 @@
-package cs.project.ui.note
+package cs.project.navapp.ui.notes
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

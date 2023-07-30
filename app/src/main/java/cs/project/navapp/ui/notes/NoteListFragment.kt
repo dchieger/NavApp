@@ -10,9 +10,9 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import cs.project.navapp.R
+//import cs.project.navapp.databinding.FragmentNoteListBinding
 import cs.project.navapp.databinding.FragmentNoteListBinding
-import cs.project.ui.note.NoteListAdapter
+import cs.project.navapp.ui.notes.NoteListAdapter
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
@@ -30,7 +30,7 @@ class NoteListFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentNoteListBinding.inflate(inflater, container, false)
 
         binding.noteRecyclerView.layoutManager = LinearLayoutManager(context)

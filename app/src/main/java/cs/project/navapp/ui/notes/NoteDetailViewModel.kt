@@ -1,4 +1,4 @@
-package cs.project.ui.note
+package cs.project.navapp.ui.notes
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

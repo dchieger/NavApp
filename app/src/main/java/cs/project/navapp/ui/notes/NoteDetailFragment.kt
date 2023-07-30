@@ -1,4 +1,4 @@
-package cs.project.ui.note
+package cs.project.navapp.ui.notes
 
 import android.os.Bundle
 import android.util.Log
@@ -13,8 +13,8 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.navArgs
 import cs.project.navapp.databinding.FragmentNoteDetailBinding
-import cs.project.navapp.ui.notes.Note
-import kotlinx.coroutines.flow.collect
+import cs.project.navapp.ui.notes.NoteDetailViewModel
+import cs.project.navapp.ui.notes.NoteDetailViewModelFactory
 import kotlinx.coroutines.launch
 import java.util.Date
 import java.util.UUID
@@ -28,7 +28,7 @@ class NoteDetailFragment : Fragment() {
         get() = checkNotNull(_binding) {
             "Cannot access binding because it is null. Is the view visible?"
         }
-    //private val args: FragmentNoteDetailBindingArgs by navArgs()
+    private val args: FragmentNoteDetailBindingArgs by navArgs()
 
     private val noteDetailViewModel: NoteDetailViewModel by viewModels {
         NoteDetailViewModelFactory(args.noteId)
@@ -51,7 +51,7 @@ class NoteDetailFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding =
             FragmentNoteDetailBinding.inflate(inflater, container, false)
         return binding.root

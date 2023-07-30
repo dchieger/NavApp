@@ -22,13 +22,13 @@
             android:name="cs.project.navapp.ui.notes.NoteListFragment"
             android:label="NoteListFragment"
             tools:layout="@layout/fragment_note_list">
-            <action
-                    android:id="@+id/showNoteDetail"
-                    app:destination="@id/noteDeatilFragment"/>
+        <action
+                android:id="@+id/showNoteDetail"
+                app:destination="@id/noteDetailFragment"/>
                     </fragment>
 
     <fragment
-            android:id="@+id/noteDeatilFragment"
+            android:id="@+id/noteDetailFragment"
             android:name="cs.project.navapp.ui.notes.NoteDetailFragment"
             android:label="NoteDetailFragment"
             tools:layout="@layout/fragment_note_detail">
